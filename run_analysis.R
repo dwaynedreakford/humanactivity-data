@@ -85,8 +85,8 @@ run_analysis <- function() {
     # activity.
     averagesDataset <- summarize_each(fullDatasetGrouped, funs(mean), 3:68)
     
-    # Write the "averages" data set to file.
+    # Write the "averages" data set to file (include a csv as well as txt).
     write.csv(averagesDataset, file = "activity_averages_dataset.csv", row.names = FALSE)
-
+    write.table(averagesDataset, file = "activity_averages_dataset.txt", row.names = FALSE)
 }
 
